@@ -1,26 +1,47 @@
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/FAMAF-resources/Template-repository)
 
-# Materia - FAMAF - Computacion
+# Análisis Matemático II - FAMAF - Computacion
 
-> Cuatrimestre
+> Primer Año - 2° Cuatrimestre
 
-Necesita tener aprobada:
+## Correlativas para **cursar**
 
-- 1
+| Materia               | Condición    |
+| --------------------- | ------------ |
+| Curso de Nivelación   | Aprobada     |
+| Análisis Matemático I | Regularizada |
 
-Es correlativa de:
+## Correlativas para **aprobar**
 
-- 1
+| Materia               | Condición    |
+| --------------------- | ------------ |
+| Curso de Nivelación   | Aprobada     |
+| Análisis Matemático I | Aprobada     |
+
+## Es correlativa de:
+
+- Probabilidad y Estadística
+- Física
 
 ## Clonar el repositorio
 
+> http
+
 ```bash
-git clone <repo-url>
+git clone https://github.com/FAMAF-resources/Analisis_Matematico_II-FAMAF.git
 ```
 
-# Contribuciones
+> ssh
 
-Cualquier persona puede realiza su aporte con apunte, libro, o actualizacion de este repositoro. Puede ser realizado por una pull request (PR) comunicarse con los administradores.
+```bash
+git clone git@github.com:FAMAF-resources/Analisis_Matematico_II-FAMAF.git
+```
+
+# ¿Cómo contribuir?
+
+Cualquier persona puede realizar su aporte, sea apunte, libro, o actualizacion de este repositoro.
+
+Puede ser realizado por una pull request (PR) o comunicándose con los administradores.
 
 # Contributors
 <a href="https://github.com/FAMAF-resources/Template-repository/graphs/contributors">
