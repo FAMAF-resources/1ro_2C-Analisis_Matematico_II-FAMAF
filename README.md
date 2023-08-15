@@ -28,13 +28,19 @@
 > http
 
 ```bash
-git clone https://github.com/FAMAF-resources/Analisis_Matematico_II-FAMAF.git
+git clone --recurse-submodules https://github.com/FAMAF-resources/Analisis_Matematico_II-FAMAF.git
 ```
 
 > ssh
 
 ```bash
-git clone git@github.com:FAMAF-resources/Analisis_Matematico_II-FAMAF.git
+git clone --recurse-submodules git@github.com:FAMAF-resources/Analisis_Matematico_II-FAMAF.git
+```
+
+## Update
+
+```bash
+git pull && git submodule update --init --recursive
 ```
 
 # ¿Cómo contribuir?
