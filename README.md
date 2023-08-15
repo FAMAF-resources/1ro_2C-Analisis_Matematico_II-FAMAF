@@ -28,13 +28,19 @@
 > http
 
 ```bash
-git clone https://github.com/FAMAF-resources/Analisis_Matematico_II-FAMAF.git
+git clone --recurse-submodules https://github.com/FAMAF-resources/Analisis_Matematico_II-FAMAF.git
 ```
 
 > ssh
 
 ```bash
-git clone git@github.com:FAMAF-resources/Analisis_Matematico_II-FAMAF.git
+git clone --recurse-submodules git@github.com:FAMAF-resources/Analisis_Matematico_II-FAMAF.git
+```
+
+## Update
+
+```bash
+git pull && git submodule update --init --recursive
 ```
 
 # ¿Cómo contribuir?
@@ -45,5 +51,5 @@ Puede ser realizado por una pull request (PR) o comunicándose con los administr
 
 # Contributors
 <a href="https://github.com/FAMAF-resources/Template-repository/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=FAMAF-resources/Template-repository"/>
+  <img src="https://contrib.rocks/image?repo=FAMAF-resources/Template-repository" height="50"/>
 </a>
