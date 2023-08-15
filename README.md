@@ -1,4 +1,4 @@
-![GitHub Repo Size](https://img.shields.io/github/repo-size/FAMAF-resources/Template-repository)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/FAMAF-resources/1ro_2C-Analisis_Matematico_II-FAMAF)
 
 # Análisis Matemático II - FAMAF - Computacion
 
@@ -25,16 +25,16 @@
 
 ## Clonar el repositorio
 
-> http
+**https**
 
 ```bash
-git clone --recurse-submodules https://github.com/FAMAF-resources/Analisis_Matematico_II-FAMAF.git
+git clone --recurse-submodules https://github.com/FAMAF-resources/1ro_2C-Analisis_Matematico_II-FAMAF.git
 ```
 
-> ssh
+**ssh (recomendado)**
 
 ```bash
-git clone --recurse-submodules git@github.com:FAMAF-resources/Analisis_Matematico_II-FAMAF.git
+git clone --recurse-submodules git@github.com:FAMAF-resources/1ro_2C-Analisis_Matematico_II-FAMAF.git
 ```
 
 ## Update
@@ -45,11 +45,13 @@ git pull && git submodule update --init --recursive
 
 # ¿Cómo contribuir?
 
+Este es un proyecto con fines de facilitar el acceso al material para estudio.
+
 Cualquier persona puede realizar su aporte, sea apunte, libro, o actualizacion de este repositoro.
 
 Puede ser realizado por una pull request (PR) o comunicándose con los administradores.
 
 # Contributors
-<a href="https://github.com/FAMAF-resources/Template-repository/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=FAMAF-resources/Template-repository" height="50"/>
+<a href="https://github.com/FAMAF-resources/1ro_2C-Analisis_Matematico_II-FAMAF/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=FAMAF-resources/1ro_2C-Analisis_Matematico_II-FAMAF" height="50"/>
 </a>
