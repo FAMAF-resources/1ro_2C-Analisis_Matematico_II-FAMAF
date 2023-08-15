@@ -51,5 +51,5 @@ Puede ser realizado por una pull request (PR) o comunicándose con los administr
 
 # Contributors
 <a href="https://github.com/FAMAF-resources/Template-repository/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=FAMAF-resources/Template-repository"/>
+  <img src="https://contrib.rocks/image?repo=FAMAF-resources/Template-repository" height="50"/>
 </a>
