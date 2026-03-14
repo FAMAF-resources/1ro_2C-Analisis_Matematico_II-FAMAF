@@ -1,9 +1,7 @@
 name: 'Pull Request Labeler'
 
 on:
-  # pull_request:
-  #   types: [opened, ready_for_review, labeled, unlabeled, reopened, synchronize]
-  pull_request_target:
+  pull_request:
     types: [opened, ready_for_review, labeled, unlabeled, reopened, synchronize]
 
 jobs:
@@ -13,6 +11,15 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-    - uses: actions/labeler@v4
-      with:
-        repo-token: "${{ secrets.WORKFLOW_TOKEN }}"
+      - name: Generate GitHub App Token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Label PR
+        uses: actions/labeler@v6
+        with:
+          repo-token: ${{ steps.generate_token.outputs.token }}
+          # sync-labels: true (Opcional: elimina etiquetas si los archivos cambian)

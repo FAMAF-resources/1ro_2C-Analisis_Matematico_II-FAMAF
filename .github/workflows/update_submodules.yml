@@ -19,35 +19,42 @@ jobs:
   famaftestupdate:
     name: Update submodules
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
     steps:
-      - uses: actions/checkout@v3
+      - name: Generate GitHub App Token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
         with:
-          token: ${{ secrets.WORKFLOW_TOKEN }}
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
           submodules: recursive
+          fetch-depth: 0
+
       - name: Update submodules
         run: git submodule update --init --recursive --checkout -f --remote
 
       - name: Update status
         id: status
         run: |
-          echo $(git status -s)
-          if [[ $(git status -s) ]]; then
-            export SHOULD_COMMIT=true
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "SHOULD_COMMIT=true" >> $GITHUB_ENV
           else
-            export SHOULD_COMMIT=false
+            echo "SHOULD_COMMIT=false" >> $GITHUB_ENV
           fi
-          echo "SHOULD_COMMIT=$SHOULD_COMMIT" >> $GITHUB_ENV
-          echo "SHOULD_COMMIT=$SHOULD_COMMIT"
 
-      - name: Config git
+      - name: Config git and Push
         if: ${{ env.SHOULD_COMMIT == 'true' }}
         run: |
-          git config --global user.name "GitHub Action"
-          git config --global user.email "noreply@github.com"
+          git config --global user.name "${{ steps.generate_token.outputs.app-slug }}[bot]"
+          git config --global user.email "${{ steps.generate_token.outputs.app-user-id }}+${{ steps.generate_token.outputs.app-slug }}[bot]@users.noreply.github.com"
+
+          # Ejecutar tu script de actualización
           source ./Famaf-Resources-Manager/scripts/update_w_from_parent.sh
-          git add .github
-          git commit -am "[BOT] Update submodules at $(date "+DATE: %Y-%m-%d TIME: %H:%M:%S")"
+
+          git add .
+          git commit -m "[BOT] Update submodules at $(date "+%Y-%m-%d %H:%M:%S")"
           git push

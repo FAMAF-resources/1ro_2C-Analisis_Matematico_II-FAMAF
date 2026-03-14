@@ -8,6 +8,8 @@ documentation:
 exams:
   - 'ExamenesViejos/*'
   - 'ExamenesViejos/**/*'
+  - 'exams/*'
+  - 'exams/**/*'
 
 apuntes:
   - 'apuntes/*'

@@ -1,18 +1,26 @@
 name: 'Auto Assign Action'
+
 on:
   pull_request:
     types: [opened, ready_for_review, labeled, unlabeled]
-  pull_request_target:
-    types: [opened, ready_for_review, labeled, unlabeled, reopened, synchronize]
 
 jobs:
   add-reviews:
     runs-on: ubuntu-latest
     steps:
-      - uses: kentaro-m/auto-assign-action@v1.2.5
+      - name: Generate GitHub App Token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Auto Assign
+        uses: kentaro-m/auto-assign-action@v2.0.0
         with:
           configuration-path: '.github/list_auto_assign.yml'
-          repo-token: ${{ secrets.WORKFLOW_TOKEN }}
+          repo-token: ${{ steps.generate_token.outputs.token }}
+
     permissions:
       contents: read
       pull-requests: write

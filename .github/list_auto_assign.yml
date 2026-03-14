@@ -2,7 +2,7 @@ addAssignees: author
 
 addReviewers: true
 
-numberOfReviewers: 3
+numberOfReviewers: 5
 
 reviewers:
   - shirosweets
@@ -10,6 +10,11 @@ reviewers:
   - diofanto33
   - IvanRenison
   - gpratoe
+  - ErnestoCarrizo
+  - achaval-tomas
+  - santiagofada
+  - Lautron
+  - FranAyrolo
 
 runOnDraft: true
 
